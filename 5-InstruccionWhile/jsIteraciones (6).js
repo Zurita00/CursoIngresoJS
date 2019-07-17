@@ -1,7 +1,6 @@
 function mostrar() {
 	var numero;
 	var suma = 0; //siempre debe tener un valor inicial
-	var promedio;
 	var contador = 0; // idem
 
 	while (contador < 5) {
@@ -12,7 +11,7 @@ function mostrar() {
 		contador++// contador = contador + 1
 	}
 
-	document.getElementById('suma').value = suma; //es la suma acumulada
-	document.getElementById('promedio').value = suma / 5; 
+	document.getElementById("suma").value = suma; //es la suma acumulada
+	document.getElementById("promedio").value = suma / 5; 
 
 }//FIN DE LA FUNCIÓN
