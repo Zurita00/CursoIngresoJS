@@ -4,19 +4,23 @@ function mostrar()
 	var contador=0;
 	var acumulador=0;
 	var respuesta="si";
-	var pregunta;
-	var numero =0;
+	var numero;
 
-	pregunta = prompt("¿Quiere agregar mas numeros?");
 
-	while ( pregunta != "si"){
+	do{
 
-		acumulador = prompt("Ingrese un número");
-		acumulador+
-		
+		numero = parseInt(prompt("Ingrese un numero"));
+
+		while(isNaN(numero)){
+			alert("No es un numero");
+			numero = parseInt(prompt("Ingrese un numero"));
+		}
+
+		respuesta = prompt("¿Quiere ingresar un numero?").toLowerCase();
+		acumulador=+ numero;
 		contador++
 	}
-	
+	while(respuesta == "si")
 
 
 document.getElementById('suma').value=acumulador;
