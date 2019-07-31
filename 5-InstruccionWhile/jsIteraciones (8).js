@@ -20,10 +20,13 @@ function mostrar() {
 		if (numero >= 0) {
 
 			positivo+= numero
+
 		}
 		else {
 
 			negativo = numero*negativo;
+
+			flag = 1
 		}
 	
 	}while (respuesta == "si");
