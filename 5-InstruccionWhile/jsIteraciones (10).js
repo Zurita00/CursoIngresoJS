@@ -1,17 +1,18 @@
 function mostrar() {
 
 
-	var acumPositivos = 0;
+	var numero;
+	var seguir;
+	var acumPositivos = 0; //suma de positivos
+	var acumNegativos = 0; // suma de negativos
 	var contadorPos = 0;
-	var acumNegativos = 0;
 	var contNegativos = 0;
 	var contadorCeros = 0;
 	var contadorPares = 0;
 	var promPos = 0;
 	var promNeg = 0;
 	var diferencia;
-	var numero;
-	var seguir;
+	
 
 	do {
 
@@ -19,7 +20,7 @@ function mostrar() {
 
 		if ( numero > 0 ) {
 			// este es el bloque de los positivos
-			acumPositivos = acumPositivos + numero;
+			acumPositivos = acumPositivos + numero; //acumPositivos += numero
 			contadorPos++;
 
 		} else if (  numero < 0 ) {
