@@ -12,9 +12,12 @@ function CalcularPrecio() {
     var cantidad;
     var marca;
     var porcentajeDescuento = 0;
+    var precio = 35;
+    var precioFinal;
+    var impuesto;
+    var suma;
 
     cantidad = document.getElementById("Cantidad").value;
-
     marca = document.getElementById("Marca").value;
 
     switch (cantidad) {
@@ -24,39 +27,70 @@ function CalcularPrecio() {
             porcentajeDescuento;
             break;
         case 3:
-            if (marca == "ArgentinaLuz") {
-                porcentajeDescuento = 15
+            if (marca == "Argentin  aLuz") {
+                porcentajeDescuento = .15
             }
             else if (marca == "Felipe") {
-                porcentajeDescuento = 10
+                porcentajeDescuento = .10
             }
             else {
-                porcentajeDescuento = 5
+                porcentajeDescuento = .5
             }
             break;
-        case 4: if (marca == "ArgentinaLuz" || marca == "Felipe") {
-            porcentajeDescuento = 25
+        case 4: if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+            porcentajeDescuento = .25
         }
-    
+
         else {
-        porcentajeDescuento = 20
-    }
-    break;
+            porcentajeDescuento = .20
+        }
+            break;
 
         case 5: if (marca == "ArgentinaLuz") {
-        porcentajeDescuento = 40
+            porcentajeDescuento = .40
+        }
+        else {
+            porcentajeDescuento = .30
+        }
+            break;
+
+        default:
+            porcentajeDescuento = .50;
+            break;
+
     }
+    if (cantidad = 3) {
+
+        precioFinal = precio * porcentajeDescuento;
+    }
+
+    else if (cantidad = 4) {
+
+        precioFinal = precio * porcentajeDescuento;
+    }
+
+
+    else if (cantidad = 5) {
+
+        precioFinal = precio * porcentajeDescuento;
+    }
+
+
     else {
-        porcentajeDescuento = 30
+        precioFinal = precio * porcentajeDescuento;
+
+
     }
-    break;
 
-        default: 
-        porcentajeDescuento = 50;
-        break;
 
+    if (precioFinal > 120) {
+
+        impuesto = precioFinal * .1;
+        precioFinal = impuesto + precioFinal;
+    }
+
+    document.getElementById("precioDescuento").value = precioFinsal;
 }
 
-}
 //while ( !(cantidad > 0)){  //isNaN())
 
