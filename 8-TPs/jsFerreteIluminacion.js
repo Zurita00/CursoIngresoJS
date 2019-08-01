@@ -12,12 +12,14 @@ function CalcularPrecio() {
     var cantidad;
     var marca;
     var porcentajeDescuento = 0;
+    var descuento;
+    var precioConDescuento;
     var precio = 35;
+    var flag = 0;
+    var IIBB;
     var precioFinal;
-    var impuesto;
-    var suma;
 
-    cantidad = document.getElementById("Cantidad").value;
+    cantidad = parseInt(document.getElementById("Cantidad").value);
     marca = document.getElementById("Marca").value;
 
     switch (cantidad) {
@@ -27,14 +29,14 @@ function CalcularPrecio() {
             porcentajeDescuento;
             break;
         case 3:
-            if (marca == "Argentin  aLuz") {
+            if (marca == "ArgentinaLuz") {
                 porcentajeDescuento = .15
             }
-            else if (marca == "Felipe") {
-                porcentajeDescuento = .10
+            else if (marca == "FelipeLamparas") {
+                porcentajeDescuento = .1
             }
             else {
-                porcentajeDescuento = .5
+                porcentajeDescuento = .05
             }
             break;
         case 4: if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
@@ -42,55 +44,47 @@ function CalcularPrecio() {
         }
 
         else {
-            porcentajeDescuento = .20
+            porcentajeDescuento = .2
         }
             break;
 
         case 5: if (marca == "ArgentinaLuz") {
-            porcentajeDescuento = .40
+            porcentajeDescuento = .4
         }
         else {
-            porcentajeDescuento = .30
+            porcentajeDescuento = .3
         }
             break;
 
         default:
-            porcentajeDescuento = .50;
+            porcentajeDescuento = .5;
             break;
 
     }
-    if (cantidad = 3) {
 
-        precioFinal = precio * porcentajeDescuento;
+descuento = precio * porcentajeDescuento;
+precioConDescuento = precio - descuento;
+precioFinal = precioConDescuento * cantidad;
+
+document.getElementById("precioDescuento").value = precioConDescuento;
+
+            if (precioFinal> 120) {
+
+                IIBB = precioConDescuento * .1;
+                precioFinal = IIBB + precioConDescuento;
+                flag = 1
+            }
+
+           
+
+            alert("El precio a pagar es $" + precioFinal);
+
+            if (flag == 1 ){
+
+                alert("Usted pagó " + "$" + IIBB);
+            }
+    
     }
 
-    else if (cantidad = 4) {
 
-        precioFinal = precio * porcentajeDescuento;
-    }
-
-
-    else if (cantidad = 5) {
-
-        precioFinal = precio * porcentajeDescuento;
-    }
-
-
-    else {
-        precioFinal = precio * porcentajeDescuento;
-
-
-    }
-
-
-    if (precioFinal > 120) {
-
-        impuesto = precioFinal * .1;
-        precioFinal = impuesto + precioFinal;
-    }
-
-    document.getElementById("precioDescuento").value = precioFinsal;
-}
-
-//while ( !(cantidad > 0)){  //isNaN())
 
