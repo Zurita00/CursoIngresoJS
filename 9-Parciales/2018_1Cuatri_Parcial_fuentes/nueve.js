@@ -18,6 +18,7 @@ function mostrar() {
     do {
 
         marca = prompt("Ingrese la marca: ");
+        
         peso = parseInt(prompt("Ingrese el peso entre el 1 y 100: "));
         while (peso < 1 || peso > 100 && isNaN(peso)) {
 
@@ -71,6 +72,5 @@ function mostrar() {
    document.write("El promedio del peso de todos los productos: " + promedio + "<br>");
    document.write("El peso máximo: " + maximo + "<br>");
    document.write("El peso minimo: " + minimo + "<br>");
-    
 
 }
